@@ -23,5 +23,8 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "rack"
 
   spec.add_development_dependency "bundler", "~> 1.6"
+  spec.add_development_dependency "cucumber-rails", "~> 1.4.1"
+  spec.add_development_dependency "aruba", "~> 0.5.4"
+  spec.add_development_dependency "sham_rack"
   spec.add_development_dependency "rake"
 end
