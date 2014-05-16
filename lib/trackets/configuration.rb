@@ -24,7 +24,7 @@ module Trackets
       "ORIGINAL_FULLPATH"
     ].freeze
 
-    DEFAULT_API_URL = "https://trackets.dev"
+    DEFAULT_API_URL = "https://trackets.com"
 
     attr_accessor :api_url, :api_key, :environment_name, :project_root, :framework, :whitelisted_env
 
