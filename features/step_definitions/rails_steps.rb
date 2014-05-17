@@ -50,9 +50,21 @@ When(/^I request "(.*?)"$/) do |url|
   EOS
 
   File.open(File.join(@dirs, "script.rb"), "w") { |f| f.write(script) }
-  p step "I run `rails r script.rb`"
+  step "I run `rails r script.rb`"
 end
 
 Then(/^I should receive notification to Trackets server$/) do
   expect(requests.size).to be > 0
+end
+
+Then(/^last notice params should (?:(not ))?contain "(.*?)"$/) do |negator, string|
+  if negator
+    last_notice_serialized_data.should_not match string
+  else
+    last_notice_serialized_data.should match string
+  end
+end
+
+Then(/^last notice params for key "(.*?)" is "(.*?)"$/) do |key, val|
+  last_notice_params_for(key).should eq val
 end

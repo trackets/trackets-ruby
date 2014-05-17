@@ -23,14 +23,16 @@ module Trackets
       "REMOTE_PORT",
       "ORIGINAL_FULLPATH"
     ].freeze
+    DEFAULT_BLACKLISTED_PARAMS = ["password", "password_confirmation", "card_number", "cvv"].freeze
 
     DEFAULT_API_URL = "https://trackets.com"
 
-    attr_accessor :api_url, :api_key, :environment_name, :project_root, :framework, :whitelisted_env
+    attr_accessor :api_url, :api_key, :environment_name, :project_root, :framework, :whitelisted_env, :blacklisted_params
 
     def initialize
       @api_url = DEFAULT_API_URL
       @whitelisted_env = DEFAULT_WHITELISTED_ENV_KEYS
+      @blacklisted_params = DEFAULT_BLACKLISTED_PARAMS
     end
 
   end
