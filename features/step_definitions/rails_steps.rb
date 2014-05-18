@@ -25,15 +25,7 @@ When(/^I copy "(.*?)" to apps "(.*?)"$/) do |template_name, target_path|
 end
 
 When(/^I define action "(.*?)" to$/) do |controller_and_action, code|
-  controller, action = controller_and_action.split("#")
-
-  File.open(File.join(@dirs, "app", "controllers", "#{controller}_controller.rb"), "w") do |f|
-    f.puts "class #{controller.classify}Controller < ApplicationController"
-    f.puts "  def #{action}"
-    f.puts code
-    f.puts "  end"
-    f.puts "end"
-  end
+  define_controller_action_to(controller_and_action, code)
 end
 
 When(/^I define route "(.*?)" to "(.*?)"$/) do |route, target|
