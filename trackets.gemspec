@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["votava@deployment.cz"]
   spec.summary       = %q{Trackets.com Ruby support GEM}
   spec.description   = %q{Helpers for Trackets.com error tracking service}
-  spec.homepage      = ""
+  spec.homepage      = "http://www.trackets.com"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
