@@ -35,5 +35,17 @@ module Trackets
       @blacklisted_params = DEFAULT_BLACKLISTED_PARAMS
     end
 
+    def rack_filter_keys(rack_env = nil)
+      @rack_filter_keys ||= rack_env ? Array(rack_env["action_dispatch.parameter_filter"]) : []
+    end
+
+    def blacklisted_keys(rack_env = nil)
+      @blacklisted_keys ||= (blacklisted_params + rack_filter_keys).map(&:to_s)
+    end
+
+    def blacklisted_key?(key, rack_env = nil)
+      blacklisted_keys.include?(key)
+    end
+
   end
 end
