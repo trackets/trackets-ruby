@@ -1,6 +1,7 @@
 require "httparty"
 require "trackets/backtrace"
 require "trackets/params"
+require "trackets/null_env"
 require "trackets/rack_env_sanitizer"
 
 module Trackets
@@ -28,11 +29,11 @@ module Trackets
     end
 
     def params
-      @params ||= Params.new(env)
+      @params ||= env ? Params.new(env) : NullEnv.new
     end
 
     def rack_env_sanitizer
-      @rack_env_sanitizer ||= RackEnvSanitizer.new(env)
+      @rack_env_sanitizer ||= env ? RackEnvSanitizer.new(env) : NullEnv.new
     end
 
     def payload

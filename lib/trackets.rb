@@ -14,7 +14,7 @@ module Trackets
       @configuration ||= Configuration.new
     end
 
-    def notify(exception, env)
+    def notify(exception, env = nil)
       Client.notify(exception, env)
     end
 
