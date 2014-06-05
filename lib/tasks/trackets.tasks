@@ -1,0 +1,15 @@
+namespace :trackets do
+
+  desc "Test Trackets integration"
+  task :test => :environment do
+    puts "Raising exception to test Trackets integration"
+
+    Trackets.send_custom_exception('Testing Trackets Gem integration via "rake trackets:test"')
+  end
+
+  desc "Send custom message defined in a MESSAGE environment variable"
+  task :notify => :environment do
+    Trackets.send_custom_exception(ENV['MESSAGE'])
+  end
+
+end

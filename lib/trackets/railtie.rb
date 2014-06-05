@@ -22,5 +22,9 @@ module Trackets
       end
     end
 
+    rake_tasks do
+      load "tasks/trackets.tasks"
+    end
+
   end
 end

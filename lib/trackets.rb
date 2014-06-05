@@ -18,5 +18,15 @@ module Trackets
       Client.notify(exception, env)
     end
 
+    class TracketsCustomException < StandardError; end
+
+    def send_custom_exception(message = nil)
+      begin
+        raise TracketsCustomException, message
+      rescue TracketsCustomException => e
+        Trackets.notify(e)
+      end
+    end
+
   end
 end
