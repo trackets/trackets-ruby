@@ -15,6 +15,7 @@ And then execute:
 ## Usage
 
     $ rails g trackets:install API_KEY
+    $ rake trackets:test # To send testing exception
 
 ## Rails
 
@@ -23,6 +24,9 @@ To include JavaScript tracking code in your app just add this line to your `app/
 ```erb
 <%= trackets_include_tag %>
 ```
+
+## Rake tasks
+    $ rake trackets:notify MESSAGE="Custom message from Rake"
 
 ## Contributing
 
