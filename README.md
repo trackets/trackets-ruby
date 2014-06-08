@@ -25,6 +25,26 @@ To include JavaScript tracking code in your app just add this line to your `app/
 <%= trackets_include_tag %>
 ```
 
+## Rack
+
+Simple `example.ru`
+
+```ruby
+require 'rack'
+require 'trackets'
+
+Trackets.setup do |config|
+  config.api_key = "insert-valid-api-key"
+end
+
+app = Rack::Builder.app do
+  run lambda { |env| raise "Testing Error" }
+end
+
+use Trackets::Middleware::RackExceptionHandler
+run app
+```
+
 ## Rake tasks
     $ rake trackets:notify MESSAGE="Custom message from Rake"
 
