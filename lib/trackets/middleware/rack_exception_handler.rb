@@ -8,9 +8,9 @@ module Trackets
 
       def call(env)
         response = @app.call(env)
-      rescue RuntimeError => exception
+      rescue Exception => exception
         Trackets.notify(exception, env)
-        raise exception
+        raise
       end
 
     end
