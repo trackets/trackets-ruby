@@ -1,5 +1,6 @@
 require "trackets/version"
 require "trackets/railtie" if defined?(Rails)
+require "trackets/middleware/rack_exception_handler"
 require "trackets/configuration"
 require "trackets/client"
 

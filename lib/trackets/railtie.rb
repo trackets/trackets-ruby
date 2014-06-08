@@ -1,5 +1,4 @@
 require "trackets/view_helpers"
-require "trackets/middleware/rack_exception_handler"
 
 module Trackets
   class Railtie < Rails::Railtie
