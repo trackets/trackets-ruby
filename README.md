@@ -1,4 +1,4 @@
-# Trackets
+# Trackets [![Build Status](https://travis-ci.org/sensible/trackets-ruby.svg?branch=master)](https://travis-ci.org/sensible/trackets-ruby)
 
 WIP gem for Trackets.com service
 
