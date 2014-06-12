@@ -51,12 +51,12 @@ end
 
 Then(/^last notice params should (?:(not ))?contain "(.*?)"$/) do |negator, string|
   if negator
-    last_notice_serialized_data.should_not match string
+    expect(last_notice_serialized_data).to_not match string
   else
-    last_notice_serialized_data.should match string
+    expect(last_notice_serialized_data).to match string
   end
 end
 
 Then(/^last notice params for key "(.*?)" is "(.*?)"$/) do |key, val|
-  last_notice_params_for(key).should eq val
+  expect(last_notice_params_for(key)).to eq val
 end
