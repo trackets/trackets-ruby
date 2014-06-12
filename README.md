@@ -25,6 +25,17 @@ To include JavaScript tracking code in your app just add this line to your `app/
 <%= trackets_include_tag %>
 ```
 
+### Configuration
+
+Can be found in `config/initializers/trackets.rb`
+
+```ruby
+Trackets.setup do |config|
+  config.api_key = "ebf6d706b29ca4e176012a3dc3b017a8" # API key for your Project
+  config.async = true # [Default: false] Send notification in a separate thread (Uses Sucker Punch gem)
+end
+```
+
 ## Rack
 
 Simple `example.ru`
