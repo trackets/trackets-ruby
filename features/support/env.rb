@@ -5,5 +5,5 @@ TEMPLATES_DIR = File.join(ROOT, 'features', 'support', 'templates')
 
 Before do
   @dirs = ["tmp", "aruba"]
-  @aruba_timeout_seconds = 5
+  @aruba_timeout_seconds = 15
 end
