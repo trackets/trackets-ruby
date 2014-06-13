@@ -3,12 +3,15 @@ require "trackets/railtie" if defined?(Rails)
 require "trackets/middleware/rack_exception_handler"
 require "trackets/configuration"
 require "trackets/client"
+require "trackets/plugins/sidekiq"
 
 module Trackets
   class << self
 
     def setup
       yield(configuration)
+
+      Sidekiq.new if defined?(::Sidekiq)
     end
 
     def configuration
