@@ -11,7 +11,7 @@ module Trackets
     def setup
       yield(configuration)
 
-      Sidekiq.new if defined?(::Sidekiq)
+      Plugins::Sidekiq.new if defined?(::Sidekiq)
     end
 
     def configuration
