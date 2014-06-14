@@ -27,12 +27,14 @@ module Trackets
 
     DEFAULT_API_URL = "https://trackets.com"
 
-    attr_accessor :api_url, :api_key, :environment_name, :project_root, :framework, :whitelisted_env, :blacklisted_params
+    attr_accessor :api_url, :api_key, :environment_name, :project_root, :framework, :whitelisted_env, :blacklisted_params, :async
+    alias_method :async?, :async
 
     def initialize
       @api_url = DEFAULT_API_URL
       @whitelisted_env = DEFAULT_WHITELISTED_ENV_KEYS
       @blacklisted_params = DEFAULT_BLACKLISTED_PARAMS
+      @async = false
     end
 
     def rack_filter_keys(rack_env = nil)

@@ -2,8 +2,8 @@ require "trackets/version"
 require "trackets/railtie" if defined?(Rails)
 require "trackets/middleware/rack_exception_handler"
 require "trackets/configuration"
-require "trackets/client"
 require "trackets/plugins/sidekiq"
+require "trackets/jobs/notice_job"
 
 module Trackets
   class << self
@@ -19,7 +19,10 @@ module Trackets
     end
 
     def notify(exception, env = nil)
-      Client.notify(exception, env)
+      job = NoticeJob.new
+      job = job.async if Trackets.configuration.async?
+
+      job.perform(exception, env)
     end
 
     class TracketsCustomException < StandardError; end
