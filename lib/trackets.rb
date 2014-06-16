@@ -2,7 +2,7 @@ require "trackets/version"
 require "trackets/railtie" if defined?(Rails)
 require "trackets/middleware/rack_exception_handler"
 require "trackets/configuration"
-require "trackets/plugins/sidekiq"
+require "trackets/plugins/loader"
 require "trackets/jobs/notice_job"
 
 module Trackets
@@ -11,7 +11,7 @@ module Trackets
     def setup
       yield(configuration)
 
-      Plugins::Sidekiq.new if defined?(::Sidekiq)
+      Plugins::Loader.new
     end
 
     def configuration
