@@ -19,6 +19,8 @@ module Trackets
     end
 
     def notify(exception, env = nil)
+      return unless Trackets.configuration.enabled?
+
       job = NoticeJob.new
       job = job.async if Trackets.configuration.async?
 

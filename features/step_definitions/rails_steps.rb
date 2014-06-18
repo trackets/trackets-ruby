@@ -12,6 +12,7 @@ When(/^I configure an app to use Trackets$/) do
 
   additions =<<-EOS
     config.api_url = "http://trackets.com"
+    config.enabled_env << :development << :test
   EOS
 
   replace_in_file(File.join(@dirs, "config", "initializers", "trackets.rb"), /^end$/, "#{additions}\nend")

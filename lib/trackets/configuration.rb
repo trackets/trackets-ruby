@@ -26,9 +26,10 @@ module Trackets
     DEFAULT_BLACKLISTED_PARAMS = ["password", "password_confirmation", "card_number", "cvv"].freeze
     DEFAULT_API_URL = "https://trackets.com"
     DEFAULT_LOAD_PLUGINS = [:sidekiq]
+    DEFAULT_ENABLED_ENV = [:production]
 
     attr_accessor :api_url, :api_key, :environment_name, :project_root, :framework, :whitelisted_env, :blacklisted_params, :async,
-      :load_plugins
+      :load_plugins, :enabled_env
     alias_method :async?, :async
 
     def initialize
@@ -37,6 +38,7 @@ module Trackets
       @blacklisted_params = DEFAULT_BLACKLISTED_PARAMS
       @async = false
       @load_plugins = DEFAULT_LOAD_PLUGINS
+      @enabled_env = DEFAULT_ENABLED_ENV
     end
 
     def rack_filter_keys(rack_env = nil)
@@ -49,6 +51,10 @@ module Trackets
 
     def blacklisted_key?(key, rack_env = nil)
       blacklisted_keys.include?(key)
+    end
+
+    def enabled?
+      enabled_env.include?(environment_name.to_sym)
     end
 
   end
