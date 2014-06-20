@@ -1,4 +1,4 @@
-# Trackets [![Build Status](https://travis-ci.org/sensible/trackets-ruby.svg?branch=master)](https://travis-ci.org/sensible/trackets-ruby)
+# Trackets [![Build Status](https://travis-ci.org/sensible/trackets-ruby.svg?branch=master)](https://travis-ci.org/sensible/trackets-ruby) [![Code Climate](https://codeclimate.com/github/sensible/trackets-ruby.png)](https://codeclimate.com/github/sensible/trackets-ruby)
 
 WIP gem for Trackets.com service
 
