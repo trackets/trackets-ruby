@@ -14,15 +14,23 @@ And then execute:
 
 ## Usage
 
-    $ rails g trackets:install API_KEY
+In order to setup Trackets for Ruby, you need to first find your API
+key. To do this simply [open up your project](https://trackets.com/projects)
+on Trackets, go to settings and copy the API key.
+
+    $ rails g trackets:install YOUR_API_KEY
     $ rake trackets:test # To send testing exception
 
-## Rails
+## JavaScript
 
-To include JavaScript tracking code in your app just add this line to your `app/views/layout/application.html.erb`
+If you wish to enable JavaScript error tracking, you can do so using a
+helper which this gem provides. Simply include the following snippet in
+your `app/views/layout/application.html.erb` in the `<head>` tag
+directly above your application JavaScript.
 
 ```erb
 <%= trackets_include_tag %>
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 ```
 
 ### Configuration
@@ -38,7 +46,7 @@ end
 
 ## Rack
 
-Simple `example.ru`
+Here's a sample `config.ru`
 
 ```ruby
 require 'rack'
@@ -57,6 +65,11 @@ run app
 ```
 
 ## Rake tasks
+
+Currently there is only one rake task for testing the setup by sending
+an exception to Trackets. You can do this simply by invoking `rake
+trackets:notify` in your application after you've installed the gem.
+
     $ rake trackets:notify MESSAGE="Custom message from Rake"
 
 ## Contributing
