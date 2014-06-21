@@ -1,4 +1,4 @@
-Copyright (c) 2014 Jan Votava
+Copyright (c) 2014 Trackets.com
 
 MIT License
 

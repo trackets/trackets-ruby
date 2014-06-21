@@ -1,6 +1,8 @@
 # Trackets [![Build Status](https://travis-ci.org/sensible/trackets-ruby.svg?branch=master)](https://travis-ci.org/sensible/trackets-ruby) [![Code Climate](https://codeclimate.com/github/sensible/trackets-ruby.png)](https://codeclimate.com/github/sensible/trackets-ruby)
 
-WIP gem for Trackets.com service
+This is a notification gem for [Trackets.com](https://trackets.com). It
+catches all unhandled exceptions and sends them to the Trackets
+servers.
 
 ## Installation
 

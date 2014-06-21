@@ -6,11 +6,11 @@ require 'trackets/version'
 Gem::Specification.new do |spec|
   spec.name          = "trackets"
   spec.version       = Trackets::VERSION
-  spec.authors       = ["Jan Votava"]
-  spec.email         = ["votava@deployment.cz"]
+  spec.authors       = ["Trackets"]
+  spec.email         = ["info@trackets.com"]
   spec.summary       = %q{Trackets.com Ruby support GEM}
   spec.description   = %q{Helpers for Trackets.com error tracking service}
-  spec.homepage      = "http://www.trackets.com"
+  spec.homepage      = "https://trackets.com"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
