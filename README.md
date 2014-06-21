@@ -24,13 +24,20 @@ on Trackets, go to settings and copy the API key.
 ## JavaScript
 
 If you wish to enable JavaScript error tracking, you can do so using a
-helper which this gem provides. Simply include the following snippet in
+helper which this gem provides. **Simply include the following snippet in
 your `app/views/layout/application.html.erb` in the `<head>` tag
-directly above your application JavaScript.
+directly above your application JavaScript.**
 
 ```erb
-<%= trackets_include_tag %>
-<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<head>
+  <%= trackets_include_tag %>
+
+  <!-- The rest of your JavaScript goes below -->
+
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  ...
+</head>
 ```
 
 ### Configuration
