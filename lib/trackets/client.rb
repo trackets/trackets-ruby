@@ -11,17 +11,19 @@ module Trackets
 
     class << self
 
-      def notify(exception, env)
-        new(exception, env).send
+      def notify(exception, env, additional_info = {})
+        new(exception, env, additional_info).send
       end
 
     end
 
     attr_reader :exception, :env
+    attr_accessor :additional_info
 
-    def initialize(exception, env)
+    def initialize(exception, env, additional_info)
       @exception = exception
       @env = env
+      @additional_info = additional_info
     end
 
     def backtrace
@@ -46,7 +48,8 @@ module Trackets
         environment_name: config.environment_name,
         project_root:     config.project_root,
         framework:        config.framework,
-        params:           params.filtered
+        params:           params.filtered,
+        additional_info:  additional_info
       }
     end
 

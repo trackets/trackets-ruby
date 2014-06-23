@@ -18,13 +18,13 @@ module Trackets
       @configuration ||= Configuration.new
     end
 
-    def notify(exception, env = nil)
+    def notify(exception, env = nil, additional_info = nil)
       return unless Trackets.configuration.enabled?
 
       job = NoticeJob.new
       job = job.async if Trackets.configuration.async?
 
-      job.perform(exception, env)
+      job.perform(exception, env, additional_info)
     end
 
     class TracketsCustomException < StandardError; end

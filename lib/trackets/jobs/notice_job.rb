@@ -6,8 +6,8 @@ module Trackets
 
     include SuckerPunch::Job
 
-    def perform(exception, env)
-      Client.notify(exception, env)
+    def perform(exception, env, additional_info)
+      Client.notify(exception, env, additional_info)
     end
 
   end
