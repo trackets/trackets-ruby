@@ -16,6 +16,14 @@ And then execute:
 
     $ rails g trackets:install API_KEY
 
+## Rails
+
+To include JavaScript tracking code in your app just add this line to your `app/views/layout/application.html.erb`
+
+```erb
+<%= trackets_include_tag %>
+```
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/trackets/fork )
