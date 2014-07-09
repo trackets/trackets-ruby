@@ -3,8 +3,9 @@ module Trackets
 
     attr_reader :rack_env
 
-    def initialize(rack_env)
+    def initialize(rack_env, hash = nil)
       @rack_env = rack_env
+      @hash = hash
     end
 
     def request
@@ -18,7 +19,7 @@ module Trackets
     def filtered
       hash.inject({}) do |ret, (key, value)|
         ret[key] = if value.kind_of?(Hash)
-          self.class.new(value).filtered
+          self.class.new(nil, value).filtered
         else
           Trackets.configuration.blacklisted_key?(key, rack_env) ? "[FILTERED]" : value
         end
