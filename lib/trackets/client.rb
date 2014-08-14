@@ -40,7 +40,7 @@ module Trackets
 
     def payload
       {
-        language:         "ruby",
+        type:             "ruby",
         message:          exception.message,
         class_name:       exception.class.to_s,
         stacktrace:       backtrace.parse.join("\n"),
