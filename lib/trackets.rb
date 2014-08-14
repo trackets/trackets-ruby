@@ -33,8 +33,17 @@ module Trackets
       begin
         raise TracketsCustomException, message
       rescue TracketsCustomException => e
-        Trackets.notify(e)
+        force { Trackets.notify(e) }
       end
+    end
+
+    def force(&block)
+      original = configuration.force?
+      configuration.force = true
+
+      yield
+
+      configuration.force = original
     end
 
   end
