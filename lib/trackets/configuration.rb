@@ -28,7 +28,8 @@ module Trackets
     DEFAULT_LOAD_PLUGINS = [:sidekiq]
     DEFAULT_ENABLED_ENV = [:production]
 
-    attr_accessor :api_url, :api_key, :environment_name, :project_root, :framework, :whitelisted_env, :blacklisted_params, :async,
+    attr_accessor :api_url, :public_api_key, :private_api_key, :environment_name,
+      :project_root, :framework, :whitelisted_env, :blacklisted_params, :async,
       :load_plugins, :enabled_env, :force
     alias_method :async?, :async
     alias_method :force?, :force

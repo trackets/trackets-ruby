@@ -1,3 +1,4 @@
 Trackets.setup do |config|
-  config.api_key = "<%= @api_key %>"
+  config.public_api_key = "<%= @public_api_key %>"
+  config.private_api_key = "<%= @private_api_key %>"
 end

@@ -6,7 +6,7 @@
 #   require 'trackets'
 #
 #   Trackets.setup do |config|
-#     config.api_key = "insert-valid-api-key"
+#     config.private_api_key = "insert-valid-api-key"
 #   end
 #
 #   app = Rack::Builder.app do

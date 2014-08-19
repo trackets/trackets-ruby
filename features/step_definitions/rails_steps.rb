@@ -8,7 +8,7 @@ end
 
 When(/^I configure an app to use Trackets$/) do
   step %{I copy "trackets_interceptor.rb" to apps "config/initializers"}
-  step "I successfully run `rails g trackets:install my-api-key`"
+  step "I successfully run `rails g trackets:install my-public-api-key my-private-api-key`"
 
   additions =<<-EOS
     config.api_url = "http://trackets.com"

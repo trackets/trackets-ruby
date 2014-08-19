@@ -58,7 +58,7 @@ module Trackets
     end
 
     def send
-      self.class.post "#{config.api_url}/reports/#{config.api_key}", body: { error: payload }
+      self.class.post "#{config.api_url}/reports/#{config.private_api_key}", body: { error: payload }
     end
   end
 end

@@ -48,7 +48,8 @@ Can be found in `config/initializers/trackets.rb`
 
 ```ruby
 Trackets.setup do |config|
-  config.api_key = "ebf6d706b29ca4e176012a3dc3b017a8" # API key for your Project
+  config.public_api_key = "ebf6d706b29ca4e176012a3dc3b017a8" # Public API key used by JavaScript for your project
+  config.private_api_key = "77773de2325364bcc1d955e7aa3e7e1f" # Private API key used for Ruby notifications
   config.async = true # [Default: false] Send notification in a separate thread (Uses Sucker Punch gem)
 end
 ```
@@ -62,7 +63,7 @@ require 'rack'
 require 'trackets'
 
 Trackets.setup do |config|
-  config.api_key = "insert-valid-api-key"
+  config.private_api_key = "insert-valid-api-key"
 end
 
 app = Rack::Builder.app do
