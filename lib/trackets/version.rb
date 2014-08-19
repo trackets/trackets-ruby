@@ -1,3 +1,3 @@
 module Trackets
-  VERSION = "0.0.8"
+  VERSION = "0.0.9"
 end
