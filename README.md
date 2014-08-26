@@ -20,7 +20,7 @@ In order to setup Trackets for Ruby, you need to first find your API
 key. To do this simply [open up your project](https://trackets.com/projects)
 on Trackets, go to settings and copy the API key.
 
-    $ rails g trackets:install YOUR_API_KEY
+    $ rails g trackets:install PUBLIC_KEY PRIVATE_KEY
     $ rake trackets:test # To send testing exception
 
 ## JavaScript
