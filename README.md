@@ -1,4 +1,4 @@
-# Trackets [![Build Status](https://travis-ci.org/sensible/trackets-ruby.svg?branch=master)](https://travis-ci.org/sensible/trackets-ruby) [![Code Climate](https://codeclimate.com/github/sensible/trackets-ruby.png)](https://codeclimate.com/github/sensible/trackets-ruby)
+# Trackets [![Build Status](https://api.travis-ci.org/trackets/trackets-ruby.svg?branch=master)](https://travis-ci.org/sensible/trackets-ruby) [![Code Climate](https://codeclimate.com/github/sensible/trackets-ruby.png)](https://codeclimate.com/github/sensible/trackets-ruby)
 
 This is a notification gem for [Trackets.com](https://trackets.com). It
 catches all unhandled exceptions and sends them to the Trackets
@@ -8,7 +8,7 @@ servers.
 
 Add this line to your application's Gemfile:
 
-    gem 'trackets'
+    gem "trackets", "~> 0.0.9"
 
 And then execute:
 
